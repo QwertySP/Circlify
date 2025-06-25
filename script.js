@@ -1,4 +1,5 @@
 let Statue = "Online";
+console.log("Circlify alpha")
 console.log("You are " + Statue);
 
 function createPost() {
@@ -31,5 +32,5 @@ function vote(button) {
 }
 
 function changeTheme() {
-  alert("Theme changing coming soon!");
+  alert("Theme changing coming soon! check our website later");
 }
