@@ -1,4 +1,5 @@
 let Statue = "Online";
+document.getElementById("statue").innerHTML = Statue;
 console.log("Circlify alpha")
 console.log("You are " + Statue);
 
