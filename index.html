@@ -1,1 +1,30 @@
-[code here qwerty or ur cooked]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circlify</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Circlify</h1>
+    <p class="status">(your status here)</p>
+  </header>
+
+  <section id="circle">
+    <h2>Your Circle: (your circle here)</h2>
+    <div class="circle-actions">
+      <button onclick="createPost()">+ Post</button>
+      <button onclick="createPoll()">+ Poll</button>
+      <button onclick="changeTheme()">🎨 Theme</button>
+    </div>
+
+    <div class="posts" id="posts">
+      <!-- Posts appear here -->
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
