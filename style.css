@@ -1,1 +1,53 @@
-// TODO: Add some style here
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #121212;
+  color: #f0f0f0;
+}
+
+header {
+  background: #1e1e1e;
+  padding: 1em;
+  text-align: center;
+  border-bottom: 2px solid #333;
+}
+
+.status {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+#circle {
+  padding: 1.5em;
+}
+
+.circle-actions {
+  margin-bottom: 1em;
+}
+
+button {
+  background: #3a3a3a;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  margin-right: 0.5em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #5a5a5a;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.post {
+  background: #1f1f1f;
+  padding: 1em;
+  border-radius: 10px;
+  border-left: 4px solid #64ffda;
+}
