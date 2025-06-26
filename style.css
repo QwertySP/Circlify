@@ -1,74 +1,47 @@
 body {
-  margin: 0;
+  background: #ffffff;
+  color: #000000;
   font-family: "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark {
   background: #121212;
   color: #f0f0f0;
 }
 
-header {
+.container {
+  background: rgba(0,0,0,0.05);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.dark .container {
   background: #1e1e1e;
-  padding: 1em;
-  text-align: center;
-  border-bottom: 2px solid #333;
 }
 
-.status {
-  font-size: 0.9em;
-  color: #ccc;
-}
-
-#circle {
-  padding: 1.5em;
-}
-
-.circle-actions {
-  margin-bottom: 1em;
+input, select, button {
+  display: block;
+  margin-top: 1em;
+  padding: 0.5em;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 button {
-  background: #3a3a3a;
+  background: #0078d4;
   color: white;
-  border: none;
-  padding: 0.5em 1em;
-  margin-right: 0.5em;
-  border-radius: 8px;
   cursor: pointer;
+  border: none;
 }
 
 button:hover {
-  background: #5a5a5a;
+  background: #005fa3;
 }
-
-.posts {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-.post {
-  background: #1f1f1f;
-  padding: 1em;
-  border-radius: 10px;
-  border-left: 4px solid #64ffda;
-}
-
-.logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: auto;
-}
-
-select {
-  background: #2a2a2a;
-  color: white;
-  border: 1px solid #444;
-  border-radius: 8px;
-  padding: 0.4em;
-  margin-top: 0.5em;
-  font-family: "Segoe UI", sans-serif;
-  cursor: pointer;
-}
-
-
