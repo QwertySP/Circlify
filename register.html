@@ -28,7 +28,9 @@
 
       try {
         const userCred = await createUserWithEmailAndPassword(auth, email, password);
-        await setDoc(doc(db, "users", userCred.user.uid), { role });
+        await setDoc(doc(db, "users", userCred.user.uid), {
+          role: "user"
+        });
         alert("Registered!");
         window.location.href = "index.html";
       } catch (e) {
