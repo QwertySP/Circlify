@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register - Circlify</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Create Account</h1>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <select id="role">
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+    </select>
+    <button onclick="register()">Register</button>
+    <p>Already have an account? <a href="index.html">Login</a></p>
+    <button onclick="toggleTheme()">🌙 Toggle Theme</button>
+  </div>
+
+  <script type="module">
+    import { auth, db } from 'firebase.js';
+    import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+    import { doc, setDoc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+
+    async function register() {
+      const email = email.value;
+      const password = password.value;
+      const role = role.value;
+
+      try {
+        const userCred = await createUserWithEmailAndPassword(auth, email, password);
+        await setDoc(doc(db, "users", userCred.user.uid), { role });
+        alert("Registered!");
+        window.location.href = "index.html";
+      } catch (e) {
+        alert("Registration failed: " + e.message);
+      }
+    }
+
+    window.toggleTheme = function () {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+</body>
+</html>
