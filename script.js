@@ -1,8 +1,21 @@
 let Statue = "Online";
-document.getElementById("statue").innerHTML = Statue;
-console.log("Circlify alpha")
+document.getElementById("statue").innerHTML = "🟢 " + Statue;
+console.log("Circlify alpha");
 console.log("You are " + Statue);
 
+function setStatus() {
+  const select = document.getElementById("statusSelect");
+  Statue = select.value;
+
+  let emoji = "🟢";
+  if (Statue === "Offline") emoji = "⚫";
+  else if (Statue === "DND") emoji = "🔴";
+
+  document.getElementById("statue").innerHTML = `${emoji} ${Statue}`;
+  console.log("Status changed to " + Statue);
+}
+
+// Existing functions unchanged:
 function createPost() {
   const content = prompt("Write your post:");
   if (content) {
