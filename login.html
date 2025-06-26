@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Circlify Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Login to Circlify</h1>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p>Don't have an account? <a href="register.html">Register</a></p>
+    <button onclick="toggleTheme()">🌙 Toggle Theme</button>
+  </div>
+
+  <script type="module">
+    import { auth } from 'firebase.js';
+    import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+    async function login() {
+      const email = email.value;
+      const password = password.value;
+      try {
+        const userCred = await signInWithEmailAndPassword(auth, email, password);
+        window.location.href = "dashboard.html";
+      } catch (e) {
+        alert("Login failed: " + e.message);
+      }
+    }
+
+    window.toggleTheme = function () {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+</body>
+</html>
